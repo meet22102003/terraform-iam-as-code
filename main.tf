@@ -9,11 +9,12 @@ terraform {
 
 provider "onelogin" {}
 
+
 module "finance_analyst_role" {
   source = "./modules/onelogin-role"
 
   role_name = var.role_name
-  app_ids   = [4380341]
-  user_ids  = [254292277]
+  app_ids   = var.app_ids
+  user_ids  = var.user_ids
   admin_ids = []
 }
